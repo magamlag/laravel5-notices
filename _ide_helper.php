@@ -1,7 +1,7 @@
 <?php
 /**
  * An helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.0.27 on 2015-04-16.
+ * Generated for Laravel 5.0.27 on 2015-04-20.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -11957,6 +11957,88 @@ namespace {
          */
         public static function hasMacro($name){
             return \Illuminate\Html\FormBuilder::hasMacro($name);
+        }
+        
+    }
+
+
+    class Flash extends \Laracasts\Flash\Flash{
+        
+        /**
+         * Flash an information message.
+         *
+         * @param string $message
+         * @static 
+         */
+        public static function info($message){
+            return \Laracasts\Flash\FlashNotifier::info($message);
+        }
+        
+        /**
+         * Flash a success message.
+         *
+         * @param string $message
+         * @return $this 
+         * @static 
+         */
+        public static function success($message){
+            return \Laracasts\Flash\FlashNotifier::success($message);
+        }
+        
+        /**
+         * Flash an error message.
+         *
+         * @param string $message
+         * @return $this 
+         * @static 
+         */
+        public static function error($message){
+            return \Laracasts\Flash\FlashNotifier::error($message);
+        }
+        
+        /**
+         * Flash a warning message.
+         *
+         * @param string $message
+         * @return $this 
+         * @static 
+         */
+        public static function warning($message){
+            return \Laracasts\Flash\FlashNotifier::warning($message);
+        }
+        
+        /**
+         * Flash an overlay modal.
+         *
+         * @param string $message
+         * @param string $title
+         * @return $this 
+         * @static 
+         */
+        public static function overlay($message, $title = 'Notice'){
+            return \Laracasts\Flash\FlashNotifier::overlay($message, $title);
+        }
+        
+        /**
+         * Flash a general message.
+         *
+         * @param string $message
+         * @param string $level
+         * @return $this 
+         * @static 
+         */
+        public static function message($message, $level = 'info'){
+            return \Laracasts\Flash\FlashNotifier::message($message, $level);
+        }
+        
+        /**
+         * Add an "important" flash to the session.
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function important(){
+            return \Laracasts\Flash\FlashNotifier::important();
         }
         
     }
